@@ -1,0 +1,20 @@
+// 定義
+$breakpoints : (
+    mb: 431px,
+    tb: 769px,
+    ltb:1101px,
+    pc: 1281px,
+    lpc: 1441px,
+    xlpc:1537px
+);
+
+@mixin min($breakpoint){
+    @media (width >= #{map-get($breakpoints,$breakpoint)}){
+        @content;
+    }
+}
+@mixin max($breakpoint){
+    @media (width < #{map-get($breakpoints,$breakpoint)}){
+        @content;
+    }
+}
